@@ -1,5 +1,5 @@
 [//]: # (title: KeySpot Portable Secrets Manager)
-[//]: # (date: 08/12/2021)
+[//]: # (date: August 8, 2021)
 [//]: # (hero: https://keyspot.app/logo.png)
 [//]: # (description: For my first dev diary I'm going to be going over KeySpot, a secrets manager designed to remove the need for .env files for any project.)
 
@@ -7,7 +7,7 @@
 
 For the past few months I've been developing web applications almost non-stop. With each new web app, I've found myself using a lot of time managing environment variables for my applications' different environments. I consider my laptop to be my dev environment which has a .env file for each project, then I have my test and prod environments which usually exist as Docker containers in the cloud. To access application secrets in these cloud environments I have to deal with the secrets manager associated with the cloud provider I happen to be using. After too many mistakes mixing up my .env files or not being able to port my secrets from one cloud to another, I decided to develop my own secrets manager named KeySpot. 
 
-For three weeks I've been building KeySpot with the aim of making it portable to any programming language and any system as well as having an easy to use interface that stores all of a developer's application secrets in one centralized location. Check it out at [keyspot.app](https://keyspot.app)! I'm still developing the tool, but in its current state it is completely usable by any software developer or team of developers.
+For three weeks I've been building KeySpot with the aim of making it portable to any programming language and any system as well as having an easy to use interface that stores all of a developer's application secrets in one centralized location. Check it out at [keyspot.app](https://keyspot.app) ! I'm still developing the tool, but in its current state it is completely usable by any software developer or team of developers.
 
 ## Usage
 
@@ -38,7 +38,7 @@ $ node index.js
 }
 ```
 
-See more at [keyspot.app](https://keyspot.app).
+See more at [keyspot.app](https://keyspot.app) .
 
 ## Next Diary
 
