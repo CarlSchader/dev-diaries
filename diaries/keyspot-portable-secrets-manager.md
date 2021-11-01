@@ -1,5 +1,5 @@
 [//]: # (title: KeySpot Portable Secrets Manager)
-[//]: # (date: August 8, 2021)
+[//]: # (date: August 12, 2021)
 [//]: # (hero: https://keyspot.app/logo.png)
 [//]: # (description: For my first dev diary I'm going to be going over KeySpot, a secrets manager designed to remove the need for .env files for any project.)
 
