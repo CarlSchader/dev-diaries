@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Produt of the Sum of Halving Powers}
+\author{Carl Schader}
+\date{November 3, 2021}
+
+\newcommand{\qed}{\tag*{$\blacksquare$}}
+
+\begin{document}
+
+\maketitle
+
+Here is something fun I discovered the other day when thinking about how there isn't a simple formula for the sum of squares $a^2 + b^2$ like there is for $a^2 - b^2 = (a+b)(a-b)$.
+
+\begin{align*}
+    \prod_{i=1}^{n}{\left(a^{k/{2^i}} + b^{k/{2^i}}\right)} &= \frac{a^k - b^k}{a^{k/{2^n}}-b^{k/{2^n}}}
+\end{align*}
+
+In a search for an equation for $a^2+b^2$, I started with $a^2-b^2=(a+b)(a-b)$ and realized I can raise the powers on the left side from two to four to achieve an equation.
+
+\begin{align*}
+    a^2-b^2 &= (a+b)(a-b)\\
+    a^4-b^4 &= (a^2+b^2)(a^2-b^2)\\
+\end{align*}
+
+This allows me to form an equation for $a^2+b^2$.
+
+\begin{align*}
+    a^4-b^4 &= (a^2+b^2)(a^2-b^2)\\
+    a^2+b^2 &= \frac{a^4-b^4}{a^2-b^2}\\
+\end{align*}
+
+This can be generalized to any power not just the sum of squares.
+
+\begin{align*}
+    k\in\mathbb{R}\\
+    a^k+b^k &= \frac{a^{2k}-b^{2k}}{a^k-b^k}\\
+\end{align*}
+
+\newpage
+
+Neat, now we have a general equation for the sum of powers. I decided to go deeper and start factoring the denominator based on \\$a^k-b^k=(a^{k/2}+b^{k/2})(a^{k/2}-b^{k/2})$ over and over again.
+
+\begin{align*}
+    k\in\mathbb{R}, n\in\mathbb{N}\\
+    a^k+b^k &= \frac{a^{2k}-b^{2k}}{a^k-b^k}\\
+    &= \frac{a^{2k}-b^{2k}}{(a^{k/2}+b^{k/2})(a^{k/2}-b^{k/2})}\\
+    &= \frac{a^{2k}-b^{2k}}{(a^{k/2}+b^{k/2})(a^{k/4}+b^{k/4})(a^{k/4}-b^{k/4})}\\
+    &= \frac{a^{2k}-b^{2k}}{(a^{k/2}+b^{k/2})(a^{k/4}+b^{k/4})\dots(a^{k/{2^n}}+b^{k/{2^n}})(a^{k/{2^n}}-b^{k/{2^n}})}\\
+    &= \frac{a^{2k}-b^{2k}}{(a^{k/{2^n}}-b^{k/{2^n}})\prod_{i=1}^{n}{\left(a^{k/{2^i}} + b^{k/{2^i}}\right)}}\\
+\end{align*}
+
+Now that product that appears in the denominator is interesting. The first thing that comes to my mind is "I bet it would be difficult to find a closed form formula that describes that." So I decided to solve in terms of that product.
+
+\begin{align*}
+    k\in\mathbb{R}, n\in\mathbb{N}\\
+    a^k+b^k &= \frac{a^{2k}-b^{2k}}{(a^{k/{2^n}}-b^{k/{2^n}})\prod_{i=1}^{n}(a^{k/{2^i}}+b^{k/{2^i}})}\\
+    \prod_{i=1}^{n}{\left(a^{k/{2^i}} + b^{k/{2^i}}\right)} &= \frac{a^{2k}-b^{2k}}{(a^{k/{2^n}}-b^{k/{2^n}})(a^k+b^k)}\\
+    \prod_{i=1}^{n}{\left(a^{k/{2^i}} + b^{k/{2^i}}\right)} &= \frac{(a^k-b^k)(a^k+b^k)}{(a^{k/{2^n}}-b^{k/{2^n}})(a^k+b^k)}\\
+    \prod_{i=1}^{n}{\left(a^{k/{2^i}} + b^{k/{2^i}}\right)} &= \frac{a^k-b^k}{a^{k/{2^n}}-b^{k/{2^n}}}\\
+    \qed
+\end{align*}
+
+\end{document}
